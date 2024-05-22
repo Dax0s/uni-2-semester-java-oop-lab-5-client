@@ -6,7 +6,6 @@ import javafx.scene.control.TextField;
 import org.example.chatclientjavafx.client.Client;
 
 import java.io.IOException;
-import java.net.UnknownHostException;
 
 public class ServerConnectController {
     @FXML
@@ -44,11 +43,10 @@ public class ServerConnectController {
             return;
         }
 
-        System.out.println("Test");
         try {
             if (client != null && client.getClientThread().isAlive()) {
-                client.getOut().println(null);
                 client.getClientThread().interrupt();
+                client.getSocket().close();
             }
             serverAddressField.setText("");
             serverPortField.setText("");

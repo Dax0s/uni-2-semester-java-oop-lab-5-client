@@ -7,8 +7,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.net.UnknownHostException;
-import java.util.Scanner;
 
 public class Client {
     private final String serverAddress;
@@ -17,12 +15,13 @@ public class Client {
     private final PrintWriter out;
     private final Thread clientThread;
     private final ClientMessageHandler messageHandler;
+    private final Socket socket;
 
     public Client(String serverAddress, int serverPort, TextArea chatArea) throws IOException {
         this.serverAddress = serverAddress;
         this.serverPort = serverPort;
 
-        Socket socket = new Socket(serverAddress, serverPort);
+        socket = new Socket(serverAddress, serverPort);
         System.out.println("Connected to server!");
 
         out = new PrintWriter(socket.getOutputStream(), true);
@@ -51,5 +50,9 @@ public class Client {
 
     public ClientMessageHandler getMessageHandler() {
         return messageHandler;
+    }
+
+    public Socket getSocket() {
+        return socket;
     }
 }
