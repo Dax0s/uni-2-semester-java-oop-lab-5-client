@@ -1,8 +1,8 @@
 package org.example.chatclientjavafx.controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import org.example.chatclientjavafx.Singleton;
 import org.example.chatclientjavafx.client.Client;
 
 import java.io.IOException;
@@ -12,11 +12,6 @@ public class ServerConnectController {
     private TextField serverAddressField;
     @FXML
     private TextField serverPortField;
-
-    @FXML
-    private TextField messageField;
-    @FXML
-    private TextArea chatArea;
 
     private Client client;
 
@@ -47,23 +42,18 @@ public class ServerConnectController {
             if (client != null && client.getClientThread().isAlive()) {
                 client.getClientThread().interrupt();
                 client.getSocket().close();
+                client = null;
             }
             serverAddressField.setText("");
             serverPortField.setText("");
 
-            chatArea.setText("");
+            Singleton.getInstance().getChatController().getChatArea().setText("");
 
-            client = new Client(serverAddress, serverPort, chatArea);
+            client = new Client(serverAddress, serverPort, Singleton.getInstance().getChatController().getChatArea());
+
+            Singleton.getInstance().getChatController().setClient(client);
         } catch (IOException e) {
             System.out.println("Cannot connect to host");
         }
-    }
-
-    @FXML
-    protected void onSendButtonClick() {
-        if (client == null || messageField.getText().isBlank()) return;
-
-        client.getOut().println(messageField.getText());
-        messageField.setText("");
     }
 }

@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.chatclientjavafx.controllers.ServerConnectController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.chatclientjavafx.controllers.ServerConnectController">
    <children>
       <TextField fx:id="serverAddressField" layoutX="14.0" layoutY="27.0" promptText="Server address" />
       <TextField fx:id="serverPortField" layoutX="14.0" layoutY="61.0" promptText="Server port" />
       <Button layoutX="200.0" layoutY="27.0" mnemonicParsing="false" onAction="#onConnectButtonClick" text="Connect" />
-      <TextArea fx:id="chatArea" editable="false" layoutX="282.0" layoutY="27.0" prefHeight="200.0" prefWidth="224.0" />
-      <TextField fx:id="messageField" layoutX="282.0" layoutY="244.0" promptText="Message" />
-      <Button layoutX="457.0" layoutY="244.0" mnemonicParsing="false" onAction="#onSendButtonClick" text="Send" />
    </children>
 </AnchorPane>
