@@ -1,9 +1,9 @@
 package org.example.chatclientjavafx.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
 import org.example.chatclientjavafx.client.Client;
 
 public class ChatController {
@@ -16,20 +16,16 @@ public class ChatController {
     private Client client;
 
     @FXML
-    private void initialize() {
-        messageField.setOnKeyPressed(event -> {
-            if (event.getCode() == KeyCode.ENTER) {
-                onSendButtonClick();
-            }
-        });
-    }
-
-    @FXML
     protected void onSendButtonClick() {
         if (client == null || messageField.getText().isBlank()) return;
 
         client.getOut().println(messageField.getText());
         messageField.setText("");
+    }
+
+    @FXML
+    protected void onEnterButtonClick(ActionEvent event) {
+        onSendButtonClick();
     }
 
     public TextArea getChatArea() {

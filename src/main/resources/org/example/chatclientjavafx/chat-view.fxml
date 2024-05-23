@@ -5,11 +5,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.chatclientjavafx.controllers.ChatController">
    <children>
       <TextArea fx:id="chatArea" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="327.0" prefWidth="575.0" wrapText="true" />
-      <TextField fx:id="messageField" layoutX="14.0" layoutY="359.0" prefHeight="24.0" prefWidth="511.0" promptText="Message" />
+      <TextField fx:id="messageField" layoutX="14.0" layoutY="359.0" onAction="#onEnterButtonClick" prefHeight="24.0" prefWidth="511.0" promptText="Message" />
       <Button layoutX="535.0" layoutY="359.0" mnemonicParsing="false" onAction="#onSendButtonClick" text="Send" />
    </children>
 </AnchorPane>

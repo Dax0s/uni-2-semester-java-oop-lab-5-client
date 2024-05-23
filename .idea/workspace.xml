@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f1cb6d9e-1467-42a3-b15f-8df91190f4ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/chatclientjavafx/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/chatclientjavafx/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/chatclientjavafx/controllers/ServerConnectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/chatclientjavafx/controllers/ServerConnectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/chatclientjavafx/server-connect-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/chatclientjavafx/server-connect-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/chatclientjavafx/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/chatclientjavafx/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/chatclientjavafx/client/ClientMessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/chatclientjavafx/client/ClientMessageReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/chatclientjavafx/controllers/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/chatclientjavafx/controllers/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/chatclientjavafx/chat-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/chatclientjavafx/chat-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +131,8 @@
       <updated>1716319374534</updated>
       <workItem from="1716319375583" duration="2676000" />
       <workItem from="1716385742693" duration="3338000" />
-      <workItem from="1716411304986" duration="1852000" />
+      <workItem from="1716411304986" duration="2670000" />
+      <workItem from="1716448242305" duration="642000" />
     </task>
     <servers />
   </component>

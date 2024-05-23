@@ -6,11 +6,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.net.SocketException;
 
-public class ClientMessageHandler implements Runnable {
+public class ClientMessageReceiver implements Runnable {
     private final BufferedReader in;
     private final TextArea chatArea;
 
-    public ClientMessageHandler(BufferedReader in, TextArea chatArea) {
+    public ClientMessageReceiver(BufferedReader in, TextArea chatArea) {
         this.in = in;
         this.chatArea = chatArea;
     }
@@ -20,8 +20,7 @@ public class ClientMessageHandler implements Runnable {
         try {
             String serverResponse;
             while ((serverResponse = in.readLine()) != null) {
-//                System.out.println(serverResponse);
-                chatArea.setText(chatArea.getText() + "\n" + serverResponse);
+                chatArea.appendText("\n" + serverResponse);
             }
         } catch (SocketException e) {
             System.out.println("Socket is already closed");

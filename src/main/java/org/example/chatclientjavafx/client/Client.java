@@ -14,7 +14,7 @@ public class Client {
 
     private final PrintWriter out;
     private final Thread clientThread;
-    private final ClientMessageHandler messageHandler;
+    private final ClientMessageReceiver messageHandler;
     private final Socket socket;
 
     public Client(String serverAddress, int serverPort, TextArea chatArea) throws IOException {
@@ -27,7 +27,7 @@ public class Client {
         out = new PrintWriter(socket.getOutputStream(), true);
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-        messageHandler = new ClientMessageHandler(in, chatArea);
+        messageHandler = new ClientMessageReceiver(in, chatArea);
         clientThread = new Thread(messageHandler);
         clientThread.start();
 
@@ -48,7 +48,7 @@ public class Client {
         return clientThread;
     }
 
-    public ClientMessageHandler getMessageHandler() {
+    public ClientMessageReceiver getMessageHandler() {
         return messageHandler;
     }
 
